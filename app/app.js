@@ -1,10 +1,20 @@
 /*
- * 使用React开发的学生考试功能
- * - 测试学生的考试环境，喇叭和麦克风是否工作正常
  */
+import React from 'react'
 import { render } from 'react-dom'
 import AppRoute from './routes/Route'
+import App from './components/App'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
 
-// Finally, we render a <Router> with some <Route>s.
-// It does all the fancy routing stuff for us.
-render(AppRoute, document.getElementById('app'))
+let store = createStore(todoApp)
+
+
+
+render(
+		<Provider store={store}>
+			<App />
+		</Provider>,
+		document.getElementById('app')
+)
