@@ -5,10 +5,12 @@ import VisibleTodoList from '../containers/VisibleTodoList'
 import { Component } from 'react'
 import { Link } from 'react-router'
 
-const App = () => (
+const App = ({ params  }) => (
   <div>
     <AddTodo />
-    <VisibleTodoList />
+    <VisibleTodoList 
+			filter={params.filter || 'all'}
+		/>
     <Footer />
   </div>
 )
