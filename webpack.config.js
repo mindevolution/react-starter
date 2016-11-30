@@ -6,6 +6,10 @@ module.exports = {
 		html: "./index.html",
 
 	},
+	devServer: {
+		    historyApiFallback: true,
+				  
+	},
 
 	output: {
 		filename: "app.js",
